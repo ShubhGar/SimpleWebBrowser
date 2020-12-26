@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SimpleWebBrowser" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="K0J-Qp-MqQ">
+                                <rect key="frame" x="0.0" y="44" width="338" height="56"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                            </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpd-UE-OH6">
+                                <rect key="frame" x="338" y="44" width="76" height="56"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="searchBtnAxn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n73-QX-Mg6"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="UaN-F2-iL5">
+                                <rect key="frame" x="0.0" y="832" width="414" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nS-Jx-vzD">
+                                        <rect key="frame" x="0.0" y="0.0" width="207" height="30"/>
+                                        <state key="normal" title="Back"/>
+                                        <connections>
+                                            <action selector="backBtnAxn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iaR-GB-4Km"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUl-Lb-hCs">
+                                        <rect key="frame" x="207" y="0.0" width="207" height="30"/>
+                                        <state key="normal" title="Forward"/>
+                                        <connections>
+                                            <action selector="forwardBtnAxn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="riA-PF-dGq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kEb-x7-Ezl">
+                                <rect key="frame" x="0.0" y="100" width="414" height="724"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="kEb-x7-Ezl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="63n-Bk-869"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UaN-F2-iL5" secondAttribute="bottom" id="Jmx-q3-Fqq"/>
+                            <constraint firstItem="UaN-F2-iL5" firstAttribute="top" secondItem="kEb-x7-Ezl" secondAttribute="bottom" constant="8" symbolic="YES" id="RTj-XI-wA1"/>
+                            <constraint firstItem="hpd-UE-OH6" firstAttribute="leading" secondItem="K0J-Qp-MqQ" secondAttribute="trailing" symbolic="YES" id="SxJ-hI-1zi"/>
+                            <constraint firstAttribute="trailing" secondItem="UaN-F2-iL5" secondAttribute="trailing" id="TWK-6v-KbS"/>
+                            <constraint firstAttribute="trailing" secondItem="hpd-UE-OH6" secondAttribute="trailing" id="USJ-Wt-ARD"/>
+                            <constraint firstItem="hpd-UE-OH6" firstAttribute="height" secondItem="K0J-Qp-MqQ" secondAttribute="height" id="Zrz-ys-Hiw"/>
+                            <constraint firstItem="kEb-x7-Ezl" firstAttribute="top" secondItem="K0J-Qp-MqQ" secondAttribute="bottom" symbolic="YES" id="adP-9F-Tvn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kEb-x7-Ezl" secondAttribute="trailing" id="avE-1Z-hej"/>
+                            <constraint firstItem="K0J-Qp-MqQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hmt-gv-46A"/>
+                            <constraint firstItem="hpd-UE-OH6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="j9d-RF-onH"/>
+                            <constraint firstItem="UaN-F2-iL5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kU0-sd-J7m"/>
+                            <constraint firstItem="K0J-Qp-MqQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qWo-Jc-gSV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="K0J-Qp-MqQ" id="0e0-Cx-O0W"/>
+                        <outlet property="webview" destination="kEb-x7-Ezl" id="TTK-eD-oIV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="115.84821428571428"/>
+        </scene>
+    </scenes>
+</document>
